@@ -82,7 +82,7 @@ capacity: 60,
 price: 1000,
 cuisine: 'Chinese',
 user_id: user.id,
-photo: 'https://cdn.vox-cdn.com/thumbor/Erxs97xM_IaQLkStgNnY5jBP26Y=/0x0:5307x3538/920x0/filters:focal(0x0:5307x3538):format(webp):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/8756501/20170622JF_EATER_CHINESE_RESTAURANTS_18.jpg'
+photo: 'https://lifecooler.com/files/registos/imagens/447322/329950.jpg'
 )
 
 Restaurant.create!(
@@ -108,7 +108,7 @@ photo: 'https://apis.infoportugal.info/cms-media/pois/final/141/JRN.RE.28423-141
 )
 
 Restaurant.create!(
-name: "La Brasserie de LEntrecôte",
+name: "La Brasserie",
 description: 'Steak & frites is the focus of this classically simple bistro, also serving vegetarian options.',
 location: 'Lisbon',
 capacity: 80,
@@ -126,7 +126,7 @@ capacity: 300,
 price: 10000,
 cuisine: 'Portuguese',
 user_id: user.id,
-photo: 'https://cdn.vox-cdn.com/thumbor/ruJOg1jkiwnpOH3WJkno1h5Xdc0=/0x0:1280x853/970x728/filters:focal(538x325:742x529):format(webp):no_upscale()/cdn.vox-cdn.com/uploads/chorus_image/image/62561177/8_Lisbon_BairrodoAvillez.0.0.jpg'
+photo: 'https://www.joseavillez.pt//images/Backs/Back_298/BairrodoAvillezPateo2.jpg'
 )
 
 puts "Created 10 restaurant seeds!"
