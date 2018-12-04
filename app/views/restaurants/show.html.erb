@@ -1,27 +1,27 @@
 <div class="container">
-  <h2><%= @restaurant.name %></h2>
   <div class="restaurant-container">
-    <div class="restaurant-hero" style="background-image: url(<%= @restaurant.photo %>)">
+    <div class="restaurant-hero" style="background-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(24,35,44,0) 19%,rgba(125,185,232,0) 100%), url(<%= @restaurant.photo %>)">
+      <h2><%= @restaurant.name %></h2>
       <div class="btn btn-success">Book Restaurant</div>
     </div>
       <div class="description-container">
         <div class="icons-container">
-          <h5>Stats</h5>
+         <!--  <h5>Stats</h5> -->
           <div class="icons">
             <i class="fas fa-euro-sign"></i>
             <span><%= @restaurant.price %></span>
           </div>
           <div class="icons">
             <i class="fas fa-map-marker-alt"></i>
-            <span> <%= @restaurant.location %> </span>
+            <span><%= @restaurant.location %> </span>
           </div>
           <div class="icons">
             <i class="fas fa-utensils"></i>
-            <span> <%= @restaurant.cuisine %> </span>
+            <span><%= @restaurant.cuisine %> </span>
           </div>
           <div class="icons">
-            <i class="fas fa-users"></i>
-            <span> <%= @restaurant.capacity %> </span>
+            <i class="fas fa-user"></i>
+            <span><%= @restaurant.capacity %> </span>
           </div>
         </div>
         <div class="details-container">
@@ -32,14 +32,48 @@
       </div>
     </div>
 
- <!--    <div class="review-container">
-      <div class="review-row">
-        <div class="avatar">
-        </div>
-        <div class="rating"><i class="fas fa-star"></i>
+  <div class="review-container">
+    <h5>Reviews</h5>
+      <div class="message">
+        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/carolinalemos">
+        <div class="message-body">
+          <span><strong>Carolina</strong>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <br>
+            This restaurant is the coolest - I would totally book it again for my superstar clients!
+          </span>
         </div>
       </div>
-    </div> -->
-
+      <div class="message">
+        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/carolinalemos">
+        <div class="message-body">
+          <span><strong>Carolina</strong>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <br>
+            This restaurant is the coolest - I would totally book it again for my superstar clients!
+          </span>
+        </div>
+      </div>
+      <div class="message">
+        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/carolinalemos">
+        <div class="message-body">
+          <span><strong>Carolina</strong>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <br>
+            This restaurant is the coolest - I would totally book it again for my superstar clients!
+          </span>
+        </div>
+      </div>
   </div>
+</div>
+
 
