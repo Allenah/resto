@@ -12,9 +12,19 @@
   background-size: cover !important;
   background-repeat: no-repeat;
   background-position: center;
+  position: relative;
+}
+
+.restaurant-hero h2 {
+  top: 20px;
+  left: 20px;
+  margin: 0px;
+  color: white;
+  position: absolute;
 }
 
 .description-container {
+  margin-top: 20px;
   font-size: 14px;
   font-style: helvetica;
   color: gray;
@@ -25,8 +35,12 @@
   // margin-top: 20px;
 }
 
+.description-container h5 {
+  margin-top: 0px;
+}
+
 .description-item span {
-  font-size: 14px;
+  font-size: 10px;
   font-style: helvetica;
   color: gray;
   margin: 0px 20px 0px 20px;
@@ -35,10 +49,11 @@
 .icons span {
   margin: 0px 15px 0px 15px;
   font-size: 12px;
-
 }
 
-.details-container p {
-  // margin: 0px 10px 0px 10px;
+.restaurant-hero .btn {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
 }
 
