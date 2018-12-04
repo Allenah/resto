@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :restaurants
   has_many :bookings
+  has_many :reviews, through: :bookings
+  # Do we need validations for user or does Devise handle?
 end
