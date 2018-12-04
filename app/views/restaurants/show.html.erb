@@ -1,2 +1,45 @@
-<h1>Restaurants#show</h1>
-<p>Find me in app/views/restaurants/show.html.erb</p>
+<div class="container">
+  <h2><%= @restaurant.name %></h2>
+  <div class="restaurant-container">
+    <div class="restaurant-hero" style="background-image: url(<%= @restaurant.photo %>)">
+      <div class="btn btn-success">Book Restaurant</div>
+    </div>
+      <div class="description-container">
+        <div class="icons-container">
+          <h5>Stats</h5>
+          <div class="icons">
+            <i class="fas fa-euro-sign"></i>
+            <span><%= @restaurant.price %></span>
+          </div>
+          <div class="icons">
+            <i class="fas fa-map-marker-alt"></i>
+            <span> <%= @restaurant.location %> </span>
+          </div>
+          <div class="icons">
+            <i class="fas fa-utensils"></i>
+            <span> <%= @restaurant.cuisine %> </span>
+          </div>
+          <div class="icons">
+            <i class="fas fa-users"></i>
+            <span> <%= @restaurant.capacity %> </span>
+          </div>
+        </div>
+        <div class="details-container">
+          <h5>About Restaurant</h5>
+          <p> <%= @restaurant.description %> </p>
+        </div>
+
+      </div>
+    </div>
+
+ <!--    <div class="review-container">
+      <div class="review-row">
+        <div class="avatar">
+        </div>
+        <div class="rating"><i class="fas fa-star"></i>
+        </div>
+      </div>
+    </div> -->
+
+  </div>
+

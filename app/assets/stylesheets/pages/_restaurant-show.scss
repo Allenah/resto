@@ -1,0 +1,44 @@
+.restaurant-container {
+  margin: 20px;
+  width: 700px;
+  height: 550px;
+  position: relative;
+  background: white;
+}
+
+.restaurant-hero {
+  height: 400px;
+  width: 100%;
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.description-container {
+  font-size: 14px;
+  font-style: helvetica;
+  color: gray;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  // margin-bottom: 10px;
+  // margin-top: 20px;
+}
+
+.description-item span {
+  font-size: 14px;
+  font-style: helvetica;
+  color: gray;
+  margin: 0px 20px 0px 20px;
+}
+
+.icons span {
+  margin: 0px 15px 0px 15px;
+  font-size: 12px;
+
+}
+
+.details-container p {
+  // margin: 0px 10px 0px 10px;
+}
+
