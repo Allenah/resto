@@ -9,6 +9,9 @@ puts 'Creating 10 restaurants...'
 
 puts "Cleaning up database..."
 Restaurant.destroy_all
+User.destroy_all
+
+User.create!(first_name: "Paul", last_name: "Busby", email: "noreply@gmail.com", password: "secret")
 
 Restaurant.create!(
 name: 'Ramiro',
