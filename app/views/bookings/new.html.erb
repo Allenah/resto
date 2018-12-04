@@ -1,2 +1,8 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
+<div class="container">
+<h1>Book this Restaurant</h1>
+<%= simple_form_for [@restaurant, @booking] do |f| %>
+  <%= f.input :start_time, as: :string %>
+  <%= f.input :end_time as: :string %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>
+</div>
