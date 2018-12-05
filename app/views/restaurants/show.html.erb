@@ -32,8 +32,16 @@
       </div>
     </div>
 
-  <div class="review-container">
-    <h5>Reviews</h5>
+    <div class="review-container">
+      <h5>Reviews</h5>
+
+      <% if user_signed_in? && current_user.booked_restaurant?(@restaurant.id) %>
+
+      <%= render "reviews/form" %>
+
+      <% end %>
+
+
       <% @reviews.each do |r| %>
         <div class="message">
           <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/carolinalemos">
