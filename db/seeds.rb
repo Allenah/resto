@@ -17,17 +17,31 @@ owner = User.create!(
   first_name: "Paul",
   last_name: "Busby",
   email: "paul.busby@gmail.com",
-  password: "secret1"
+  password: "secret1",
+  photo: "https://avatars3.githubusercontent.com/u/28771572?v=4"
 )
 
 guest = User.create!(
-  first_name: "Allenah",
-  last_name: "Herholdt",
-  email: "allenah@gmail.com",
-  password: "secret2"
+  first_name: "Carolina",
+  last_name: "Lemos",
+  email: "carolina@gmail.com",
+  password: "secret2",
+  photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/erfbtkivocnzh6t26yod.jpg"
 )
 
 puts 'Creating 10 restaurants...'
+
+restaurant = Restaurant.create!(
+name: 'Quimera',
+description: 'Craft beers and comfort food set inside an ancient Roman tunnel',
+location: 'Lisbon',
+capacity: 30,
+price: 600,
+cuisine: 'Portuguese',
+user_id: owner.id,
+photo: 'https://mir-s3-cdn-cf.behance.net/project_modules/1400/ac133d63578377.5ab4ff8958b55.jpg'
+)
+
 Restaurant.create!(
 name: 'Ramiro',
 description: 'Relaxed, casual 3-floor seafood and beer drinking eatery established in the 1950s.',
@@ -37,17 +51,6 @@ price: 1000,
 cuisine: 'Portuguese',
 user_id: owner.id,
 photo: 'http://cityguidelisbon.files.wordpress.com/2014/03/ramiro.jpg'
-)
-
-Restaurant.create!(
-name: 'Quimera',
-description: 'Craft beers and comfort food set inside an ancient Roman tunnel',
-location: 'Lisbon',
-capacity: 30,
-price: 600,
-cuisine: 'Portuguese',
-user_id: owner.id,
-photo: 'https://mir-s3-cdn-cf.behance.net/project_modules/1400/ac133d63578377.5ab4ff8958b55.jpg'
 )
 
 Restaurant.create!(
@@ -140,8 +143,8 @@ photo: 'https://www.joseavillez.pt//images/Backs/Back_298/BairrodoAvillezPateo2.
 
 puts 'Creating 1 booking...'
 booking = Booking.create!(
-  start_time: "Paul",
-  end_time: "Busby",
+  start_time: DateTime.new,
+  end_time: DateTime.new,
   user_id: guest.id,
   restaurant_id: restaurant.id
 )
@@ -149,11 +152,33 @@ booking = Booking.create!(
 puts 'Creating 5 reviews...'
 
 Review.create!(
-description: '',
+description: 'This restaurant is so good. I am going to book this all the time for my superstar clients. The service was great and the venue was very big.',
 rating: 5,
 booking_id: booking.id
+)
 
+Review.create!(
+description: 'I will not be booking this restaurant again. My wedding was ruined due to the horrible service and the dirty bathrooms. Shame on you!',
+rating: 2,
+booking_id: booking.id
+)
 
+Review.create!(
+description: 'We had a very big office Christmas party and this place was perfect! They even helped us decorate the restaurant to make sure the vibe was perfect. Highly recommend!',
+rating: 4,
+booking_id: booking.id
+)
+
+Review.create!(
+description: 'This place sucks.',
+rating: 1,
+booking_id: booking.id
+)
+
+Review.create!(
+description: 'When my boss told me all of our clients were coming into town, I panicked. But this restaurant saved the day! Obrigado!',
+rating: 5,
+booking_id: booking.id
 )
 
 puts 'Finished!'
