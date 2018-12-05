@@ -34,45 +34,24 @@
 
   <div class="review-container">
     <h5>Reviews</h5>
-      <div class="message">
-        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/carolinalemos">
-        <div class="message-body">
-          <span><strong>Carolina</strong>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <br>
-            This restaurant is the coolest - I would totally book it again for my superstar clients!
-          </span>
+      <% rid = @restaurant.id %>
+      <% bid = Booking.where(restaurant_id: rid).first.id %>
+      <% reviews = Review.where(booking_id: bid) %>
+      <% reviews.each do |r| %>
+        <div class="message">
+          <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/carolinalemos">
+          <div class="message-body">
+            <span><strong>Carolina</strong>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <br>
+              <%= r.description %>
+            </span>
+          </div>
         </div>
-      </div>
-      <div class="message">
-        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/carolinalemos">
-        <div class="message-body">
-          <span><strong>Carolina</strong>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <br>
-            This restaurant is the coolest - I would totally book it again for my superstar clients!
-          </span>
-        </div>
-      </div>
-      <div class="message">
-        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/carolinalemos">
-        <div class="message-body">
-          <span><strong>Carolina</strong>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <br>
-            This restaurant is the coolest - I would totally book it again for my superstar clients!
-          </span>
-        </div>
-      </div>
+      <% end %>
   </div>
 </div>
 
