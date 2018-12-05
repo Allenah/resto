@@ -7,6 +7,8 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    booking = Booking.where(restaurant_id: @restaurant.id)
+    @reviews = Review.where(booking_id: booking.first.id)
   end
 
 end
