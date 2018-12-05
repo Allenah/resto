@@ -8,6 +8,7 @@ class BookingsController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_id])
     @booking = Booking.new(booking_params)
     @booking.restaurant = @restaurant
+    @booking.user = current_user
     if @booking.save
       redirect_to restaurant_path(@restaurant)
     else
@@ -15,8 +16,6 @@ class BookingsController < ApplicationController
     end
   end
 
-  def show
-  end
 
   private
 
