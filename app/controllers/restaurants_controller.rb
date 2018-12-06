@@ -13,6 +13,13 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
     @reviews = @restaurant.reviews
     @review = Review.new
+    @restaurant = Restaurant.where.not(latitude: nil, longitude: nil)
+
+        @marker =
+          {
+            lng: @restaurant.long,
+            lat: @restaurant.lat,
+          }
   end
 
 end
