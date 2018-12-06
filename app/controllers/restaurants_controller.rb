@@ -7,19 +7,32 @@ class RestaurantsController < ApplicationController
     else
       @restaurants = Restaurant.all
     end
+    @restaurants = Restaurant.where.not(lat: nil, long: nil)
+
+    @markers = @restaurants.map do |restaurant|
+      {
+        lng: restaurant.long,
+        lat: restaurant.lat
+      }
+    end
   end
 
   def show
     @restaurant = Restaurant.find(params[:id])
     @reviews = @restaurant.reviews
     @review = Review.new
-    @restaurant = Restaurant.where.not(latitude: nil, longitude: nil)
+    @markers = [{
+      lng: @restaurant.long,
+      lat: @restaurant.lat
+    }]
+    # @restaurant = Restaurant.where.not(lat: nil, long: nil)
 
-        @marker =
-          {
-            lng: @restaurant.long,
-            lat: @restaurant.lat,
-          }
+    #     @marker = @restaurant.map do |restaurant|
+    #       {
+    #         lng: restaurant.long,
+    #         lat: restaurant.lat
+    #       }
+    #     end
   end
 
 end
