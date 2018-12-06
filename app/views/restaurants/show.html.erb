@@ -48,7 +48,10 @@
           <div class="message-body">
             <span><strong>Carolina</strong>
               <% r.rating.times do  %>
-                <i class="fas fa-star"></i>
+                <i class="fas fa-star light-icon"></i>
+              <% end %>
+              <% (5 - r.rating).times do  %>
+                <i class="fas fa-star dark-icon"></i>
               <% end %>
               <br>
               <%= r.description %>

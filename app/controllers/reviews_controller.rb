@@ -8,11 +8,8 @@ class ReviewsController < ApplicationController
     @review = Review.new(reviews_params)
     @restaurant = Restaurant.find(params[:restaurant_id])
     @review.booking = Booking.where(restaurant_id: @restaurant).first
-    if @review.save
-      redirect_to restaurant_path(@restaurant)
-    else
-      render :new
-    end
+    @review.save
+    redirect_to restaurant_path(@restaurant)
   end
 
   private
