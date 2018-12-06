@@ -4,6 +4,17 @@
     <%= image_tag "Resto_logo.png", height: 50 %>
   <% end %>
 
+  <!-- Search -->
+   <div>
+     <%= form_tag restaurants_path, method: :get do %>
+       <%= text_field_tag :query,
+         params[:query],
+         class: "form-control",
+         placeholder: "Search a cuisine"
+       %>
+     <% end %>
+   </div>
+
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
