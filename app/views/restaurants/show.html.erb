@@ -47,10 +47,9 @@
           <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/carolinalemos">
           <div class="message-body">
             <span><strong>Carolina</strong>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
+              <% r.rating.times do  %>
+                <i class="fas fa-star"></i>
+              <% end %>
               <br>
               <%= r.description %>
             </span>
