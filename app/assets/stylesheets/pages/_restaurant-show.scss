@@ -1,8 +1,6 @@
 .restaurant-container {
-  margin: 20px;
-  width: 700px;
-  height: 550px;
-  position: relative;
+  width: auto;
+  height: auto;
   background: white;
 }
 
@@ -24,20 +22,27 @@
 }
 
 .description-container {
-  margin-top: 20px;
+  margin-top: 15px;
   font-size: 14px;
   font-style: helvetica;
   color: gray;
   display: flex;
   justify-content: space-around;
-  align-content: center;
-  // margin-bottom: 10px;
-  // margin-top: 20px;
+  // align-items: center;
+  h5 {
+    margin-top: 0px;
+  }
 }
 
-.description-container h5 {
-  margin-top: 0px;
+.about-container {
+  flex: 0 0 60%;
 }
+
+.icons-container {
+  flex: 0 0 20%;
+
+}
+
 
 .description-item span {
   font-size: 10px;
@@ -46,9 +51,9 @@
   margin: 0px 20px 0px 20px;
 }
 
-.icons span {
-  margin: 0px 15px 0px 15px;
-  font-size: 12px;
+.icons-container .icons span {
+  // margin: 0px 15px 0px 15px;
+  // font-size: 12px;
 }
 
 .restaurant-hero .btn {
