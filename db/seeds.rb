@@ -29,7 +29,7 @@ guest = User.create!(
   photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/erfbtkivocnzh6t26yod.jpg"
 )
 
-puts 'Creating 10 restaurants...'
+puts 'Creating 12 restaurants...'
 
 quimera = Restaurant.create!(
 name: 'Quimera',
@@ -42,6 +42,19 @@ price: 600,
 cuisine: 'Portuguese',
 user_id: owner.id,
 photo: 'https://mir-s3-cdn-cf.behance.net/project_modules/1400/ac133d63578377.5ab4ff8958b55.jpg'
+)
+
+wish = Restaurant.create!(
+name: 'Wish',
+description: 'In addition to sushi, there are Mediterranean and Japanese novelties and a wine list that recalls other times',
+location: 'Porto',
+lat:'41.1486880',
+long:'-8.6683895',
+capacity: 80,
+price: 1200,
+cuisine: 'Japanese',
+user_id: owner.id,
+photo: 'http://www.gastronomiacomvinhodoporto.com/wp-content/uploads/2015/08/CAB9475.jpg'
 )
 
 ramiro = Restaurant.create!(
@@ -122,6 +135,19 @@ user_id: owner.id,
 photo: 'https://magnolia-portugal.dunegestion.com/w4/php/dune/file.php?file=94706_chutnify2.jpg&hash=af22e99a9d'
 )
 
+portarossa = Restaurant.create!(
+name: 'Portarossa',
+description: 'Referred to as the “little Italy” of Porto, it is a typical Italian bistro.',
+location: 'Porto',
+lat:'41.1565692',
+long:'-8.6765237',
+capacity: 80,
+price: 1200,
+cuisine: 'Italian',
+user_id: owner.id,
+photo: 'http://portarossa.pt/wp-content/themes/portarossa/images/background/portarossa_banner_home_06.jpg'
+)
+
 moules = Restaurant.create!(
 name: 'Moules & Beer',
 description: 'Quality beers and seafood in a bright and open environment',
@@ -161,7 +187,7 @@ user_id: owner.id,
 photo: 'https://www.joseavillez.pt//images/Backs/Back_298/BairrodoAvillezPateo2.jpg'
 )
 
-puts 'Creating 10 bookings...'
+puts 'Creating 12 bookings...'
 
 booking_quimera = Booking.create!(
   start_time: DateTime.new,
@@ -175,6 +201,20 @@ booking_ramiro = Booking.create!(
   end_time: DateTime.new,
   user_id: guest.id,
   restaurant_id: ramiro.id
+)
+
+booking_wish = Booking.create!(
+  start_time: DateTime.new,
+  end_time: DateTime.new,
+  user_id: guest.id,
+  restaurant_id: wish.id
+)
+
+booking_portarossa = Booking.create!(
+  start_time: DateTime.new,
+  end_time: DateTime.new,
+  user_id: guest.id,
+  restaurant_id: portarossa.id
 )
 
 booking_rio_maravilha = Booking.create!(

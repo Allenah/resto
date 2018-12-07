@@ -1,75 +1,73 @@
 <!-- <div class="box"> -->
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-8">
-        <div class="restaurant-container">
-          <div class="restaurant-hero" style="background-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(24,35,44,0) 19%,rgba(125,185,232,0) 100%), url(<%= @restaurant.photo %>)">
-            <h2><%= @restaurant.name %></h2>
-          <%= link_to "Book Restaurant", new_restaurant_booking_path(@restaurant), class: "btn btn-success" %>
-          </div>
-
-          <div class="description-container">
-            <div class="icons-container">
-               <div class="icons">
-                <i class="fas fa-euro-sign"></i>
-                <span><%= @restaurant.price %></span>
-              </div>
-              <div class="icons">
-                <i class="fas fa-map-marker-alt"></i>
-                <span><%= @restaurant.location %> </span>
-              </div>
-              <div class="icons">
-                <i class="fas fa-utensils"></i>
-                <span><%= @restaurant.cuisine %> </span>
-              </div>
-              <div class="icons">
-                <i class="fas fa-user"></i>
-                <span><%= @restaurant.capacity %> </span>
-              </div>
-            </div>
-            <div class="about-container">
-              <h5>About Restaurant</h5>
-              <p> <%= @restaurant.description %> </p>
-            </div>
-          </div>
+<div class="container">
+  <div class="main-container">
+    <div>
+      <div class="restaurant-container">
+        <div class="restaurant-hero" style="background-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(24,35,44,0) 19%,rgba(125,185,232,0) 100%), url(<%= @restaurant.photo %>)">
+          <h2><%= @restaurant.name %></h2>
+        <%= link_to "Book Restaurant", new_restaurant_booking_path(@restaurant), class: "btn btn-success" %>
         </div>
-          <div class="review-container">
-            <h5>Reviews</h5>
 
-            <% if user_signed_in? && current_user.booked_restaurant?(@restaurant.id) %>
-
-            <%= render "reviews/form" %>
-
-            <% end %>
-
-
-            <% @reviews.each do |r| %>
-              <div class="message">
-                <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/carolinalemos">
-                <div class="message-body">
-                  <span><strong>Carolina</strong>
-                    <% r.rating.times do  %>
-                      <i class="fas fa-star light-icon"></i>
-                    <% end %>
-                    <% (5 - r.rating).times do  %>
-                      <i class="fas fa-star dark-icon"></i>
-                    <% end %>
-                    <br>
-                    <%= r.description %>
-                  </span>
-                </div>
-              </div>
-            <% end %>
+        <div class="description-container">
+          <div class="icons-container">
+             <div class="icons">
+              <i class="fas fa-euro-sign"></i>
+              <span><%= @restaurant.price %></span>
+            </div>
+            <div class="icons">
+              <i class="fas fa-map-marker-alt"></i>
+              <span><%= @restaurant.location %> </span>
+            </div>
+            <div class="icons">
+              <i class="fas fa-utensils"></i>
+              <span><%= @restaurant.cuisine %> </span>
+            </div>
+            <div class="icons">
+              <i class="fas fa-user"></i>
+              <span><%= @restaurant.capacity %> </span>
+            </div>
+          </div>
+          <div class="about-container">
+            <h5>About Restaurant</h5>
+            <p> <%= @restaurant.description %> </p>
+          </div>
         </div>
       </div>
-      <div class="col-xs-4">
-          <div class="booking">
-           <!-- MAP HERE -->
-           <%= render "shared/map" %>
+      <div class="review-container">
+        <h5>Reviews</h5>
+
+        <% if user_signed_in? && current_user.booked_restaurant?(@restaurant.id) %>
+
+        <%= render "reviews/form" %>
+
+        <% end %>
+
+
+        <% @reviews.each do |r| %>
+          <div class="message">
+            <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/carolinalemos">
+            <div class="message-body">
+              <span><strong>Carolina</strong>
+                <% r.rating.times do  %>
+                  <i class="fas fa-star light-icon"></i>
+                <% end %>
+                <% (5 - r.rating).times do  %>
+                  <i class="fas fa-star dark-icon"></i>
+                <% end %>
+                <br>
+                <%= r.description %>
+              </span>
+            </div>
           </div>
+        <% end %>
       </div>
     </div>
+    <div class="map-container">
+     <%= render "shared/map" %>
+    </div>
   </div>
+</div>
+
 
 
 
