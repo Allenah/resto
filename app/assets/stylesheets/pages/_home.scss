@@ -1,4 +1,9 @@
 // Specific CSS for your home-page
+
+body {
+  background-color: #f7f7f7;
+}
+
 h2 {
   margin: 20px;
 }
@@ -16,12 +21,14 @@ h2 {
   background-color: white;
   height: 250px;
   margin: 20px;
+  box-shadow:0 2px 5px rgba(0, 0, 0, 0.2);
   h3 {
     margin: 0px;
     padding: 30px 0px;
 };
   i {
   font-size: 45px;
+  color: #00e9d6;
 };
   p {
   margin: 30px;
