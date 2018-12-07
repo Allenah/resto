@@ -17,6 +17,8 @@
   border: 1px solid rgba(220,224,244,0.4);
   background-color: white;
   margin-bottom: 10px;
+  justify-content: space-between;
+  box-shadow:0 0px 3px rgba(0, 0, 0, 0.1);
 }
 .booking:last-child {
   border-bottom: none;
@@ -31,6 +33,20 @@
   p {
     margin-bottom: 4px;
   }
+}
+
+.photo-text {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  margin-right: 25px;
+}
+
+.inner-container {
+  width: 50vw;
+
 }
 
 

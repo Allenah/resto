@@ -18,9 +18,7 @@ class BookingsController < ApplicationController
 
   def index
     @user = current_user
-    # @booking = Booking.new
     @bookings = Booking.where(user_id: @user).order(created_at: :desc)
-    # @restaurant = Restaurant.where(id: @booking.restaurant_id)
   end
 
   private

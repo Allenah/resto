@@ -1,20 +1,23 @@
 <div class="container">
-  <h3>Bookings</h3>
-  <% @bookings.each do |b| %>
-
-    <div class="booking-container">
-      <div class="resto-thumbnail" style="background: url(<%= b.restaurant.photo %>) center / cover no-repeat;">
+  <div class="inner-container">
+    <h3>My Bookings</h3>
+    <% @bookings.each do |b| %>
+      <div class="booking-container">
+        <div class="photo-text">
+          <div class="resto-thumbnail" style="background: url(<%= b.restaurant.photo %>) center / cover no-repeat;">
+          </div>
+          <div class="booking-body">
+              <p><strong>Restaurant: <%= b.restaurant.name %></strong></p>
+              <p>Location: <%= b.restaurant.location %></p>
+              <p>Date: 7/12/2018 </p>
+              <p>Hour: 8pm</p>
+          </div>
+        </div>
+        <div class="link"> <%= link_to 'Review', restaurant_path(b.restaurant), class: "btn btn-success" %>
+        </div>
       </div>
-      <div class="booking-body">
-          <p>Restaurant: <%= b.restaurant.name %></p>
-          <p>Location: <%= b.restaurant.location %></p>
-          <p>Date: 7/12/2018 </p>
-          <p>Hour: 8pm</p>
-      </div>
-      <%= link_to 'show', restaurant_path(b.restaurant) %>
-
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 
 <!--  -->
