@@ -278,19 +278,19 @@ puts 'Creating 5 reviews...'
 Review.create!(
 description: 'This restaurant is so good. I am going to book this all the time for my superstar clients. The service was great and the venue was very big.',
 rating: 5,
-booking_id: booking_quimera.id
+booking_id: booking_bonsai.id
 )
 
 Review.create!(
 description: 'I will not be booking this restaurant again. My wedding was ruined due to the horrible service and the dirty bathrooms. Shame on you!',
 rating: 2,
-booking_id: booking_quimera.id
+booking_id: booking_bonsai.id
 )
 
 Review.create!(
 description: 'We had a very big office Christmas party and this place was perfect! They even helped us decorate the restaurant to make sure the vibe was perfect. Highly recommend!',
 rating: 4,
-booking_id: booking_quimera.id
+booking_id: booking_bonsai.id
 )
 
 Review.create!(
