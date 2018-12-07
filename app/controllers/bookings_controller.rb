@@ -10,12 +10,18 @@ class BookingsController < ApplicationController
     @booking.restaurant = @restaurant
     @booking.user = current_user
     if @booking.save
-      redirect_to restaurant_path(@restaurant)
+      redirect_to bookings_path
     else
       render :new
     end
   end
 
+  def index
+    @user = current_user
+    # @booking = Booking.new
+    @bookings = Booking.where(user_id: @user).order(created_at: :desc)
+    # @restaurant = Restaurant.where(id: @booking.restaurant_id)
+  end
 
   private
 
