@@ -7,19 +7,11 @@ class RestaurantsController < ApplicationController
     else
       @restaurants = Restaurant.all
     end
-    @restaurants = Restaurant.where.not(lat: nil, long: nil)
-
-    @markers = @restaurants.map do |restaurant|
-      {
-        lng: restaurant.long,
-        lat: restaurant.lat
-      }
-    end
   end
 
   def show
     @restaurant = Restaurant.find(params[:id])
-    @reviews = @restaurant.reviews
+    @reviews = @restaurant.reviews.order(created_at: :desc)
     @review = Review.new
     @markers = [{
       lng: @restaurant.long,
